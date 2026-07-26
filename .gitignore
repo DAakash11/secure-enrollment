@@ -1,6 +1,6 @@
 target/
 *.class
-*/log
+*.log
 .idea/
 *.iml
 .vscode/
