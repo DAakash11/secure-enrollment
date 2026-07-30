@@ -3,6 +3,7 @@ package com.aakash.qsec.hsm;
 import java.security.KeyStore;
 import java.security.PrivateKey;
 import java.security.Provider;
+import java.security.PublicKey;
 import java.security.Security;
 import java.security.cert.X509Certificate;
 
@@ -26,6 +27,10 @@ public class HsmKeyProvider {
             throw new IllegalStateException("No private key in HSM with label: " + label);
         }
         return key;
+    }
+
+    public PublicKey getPublicKey(String label) throws Exception {
+        return getCertificate(label).getPublicKey();
     }
 
     public X509Certificate getCertificate(String label) throws Exception {
