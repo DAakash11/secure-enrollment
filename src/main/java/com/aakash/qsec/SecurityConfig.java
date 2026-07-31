@@ -32,7 +32,7 @@ public class SecurityConfig {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/auth/login").permitAll()
-                .requestMatchers("/hello").permitAll()
+                .requestMatchers("/hello", "/whoami").permitAll()
                 .anyRequest().authenticated()
             )
             .addFilterBefore(jwtAuthFilter,

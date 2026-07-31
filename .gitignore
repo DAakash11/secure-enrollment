@@ -8,5 +8,6 @@ application-local.yml
 *.p12
 *.pem
 *.key
+/tls/
 application-local.properties
 application.properties.local
